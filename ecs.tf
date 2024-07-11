@@ -51,3 +51,6 @@ resource "aws_ecs_service" "nginx_service" {
    depends_on = [aws_security_group.ecs_sg]
 }
 
+output "nginx_pulic_ip" {
+  value = aws_ecs_service.nginx_service.assign_public_ip
+}
